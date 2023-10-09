@@ -1,0 +1,40 @@
+<label>Additional IDs
+  <input [formControl]="additionalIDs">
+</label>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Int</th>
+    <th>Float</th>
+    <th>Color</th>
+    <th>Child</th>
+  </tr>
+
+  <tr *ngFor="let item of items$ | async; trackBy:byID">
+    <td>{{ item.id }}</td>
+    <td>{{ item.int }}</td>
+    <td>{{ item.float }}</td>
+    <td>
+      <div [style.background-color]="item.color">
+        {{ item.color }}
+      </div>
+    </td>
+    <td>
+      <table>
+          <tr>
+            <th>ID</th>
+            <th>Color</th>
+          </tr>
+          <tr>
+            <td>{{ item.child.id }}</td>
+            <td>
+              <div [style.background-color]="item.child.color">
+                {{ item.child.color }}
+              </div>
+            </td>
+          </tr>
+      </table>
+    </td>
+  </tr>
+</table>

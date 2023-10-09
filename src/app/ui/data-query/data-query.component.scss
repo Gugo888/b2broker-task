@@ -1,0 +1,14 @@
+form {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+
+  input {
+    outline: none;
+  } 
+}
+
+.ng-invalid {
+  border-color: red;
+}
